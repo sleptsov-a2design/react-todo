@@ -4,10 +4,10 @@ import React from 'react';
 export default class ListItem extends React.Component {
     handleToggleActive = () => {
         this.props.toggle(this.props.context.id);
-      }
+    }
     handleRemove = () => {
         this.props.remove(this.props.context.id);
-      }
+    }
     render() {
         return (
             <li>

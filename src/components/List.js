@@ -4,6 +4,7 @@ import TextField from './TextField'
 import ListItem from './ListItem'
 import '../styles/Todo.scss'
 
+
 export default class List extends React.Component {
     constructor() {
         super();
@@ -21,39 +22,32 @@ export default class List extends React.Component {
     handleAddNewTodoItem = (e) => {
         this.setState (
             prevState => ({
-                newIdForItem: prevState.newIdForItem + 1
-        }),
-        () => 
-            this.setState(
-                prevState => ({
-                    item : [
-                        ...prevState.item,
-                        {
-                            id : prevState.newIdForItem,
-                            title : prevState.newTitle,
-                            change : false
-                        }
-                    ]
-                }),
-                () =>
-                this.setState({
-                    newTitle: ""
-                    })
-                )
-            )
+                newIdForItem: prevState.newIdForItem + 1,
+                item : [
+                    ...prevState.item,
+                    {
+                        id : prevState.newIdForItem,
+                        title : prevState.newTitle,
+                        change : false
+                    }
+                ],
+                newTitle: ""
+            })
+        )
+    
     }
     handleToggleItem = (id) => {
         this.setState(prevState => ({
-          item: prevState.item.map(
-            el => (el.id === id ? { ...el, change: !el.change } : el)
-          )
+            item: prevState.item.map(
+                el => (el.id === id ? { ...el, change: !el.change } : el)
+            )
         }));
         }
     handleRemoveTodoItem = (id) => {
         this.setState(prevState => ({
-          item: prevState.item.filter(el => el.id !== id)
+            item: prevState.item.filter(el => el.id !== id)
         }));
-      } 
+        } 
     render() {
         const list = this.state.item.map(item => {
                 return (
