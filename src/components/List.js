@@ -42,19 +42,39 @@ export default class List extends React.Component {
                 )
             )
     }
+    handleToggleItem = (id) => {
+        this.setState(prevState => ({
+          item: prevState.item.map(
+            el => (el.id === id ? { ...el, change: !el.change } : el)
+          )
+        }));
+        }
+    handleRemoveTodoItem = (id) => {
+        this.setState(prevState => ({
+          item: prevState.item.filter(el => el.id !== id)
+        }));
+      } 
     render() {
         const list = this.state.item.map(item => {
                 return (
                     <ListItem
-                        key = {item.id}
-                        title = {item.title}
+                        key={item.id}
+                        context={item}
+                        toggle={this.handleToggleItem}
+                        remove={this.handleRemoveTodoItem}
                     />
                 )
         });
+        let widthStatus = (this.state.item.filter(el => el.change).length)/this.state.item.length * 100
         return (
             <div className="todo">
                 <h1>Список дел</h1>
-                <StatusBar/>
+                {this.state.item.length ?
+                    <StatusBar
+                        progress={`${this.state.item.filter(el => el.change).length}/${this.state.item.length}`}
+                        width={{width : `${widthStatus}%`}}
+                    /> : null
+                }
                 <ul className="todo__list">
                     {list}
                 </ul>
@@ -62,6 +82,7 @@ export default class List extends React.Component {
                     value={this.state.newTitle}
                     click={this.handleAddNewTodoItem}
                     HandlerChange={this.handleChangeInput}
+                    btnActive={!this.state.newTitle}
                 />
             </div>
             

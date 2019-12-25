@@ -11,8 +11,8 @@
         margin-top: 10px;
         overflow: hidden;
         &-line {
-            background: red;
-            width: 20%;
+            background: #4072ce;
+            transition: all 0.2s ease-in-out;
             height: 100%;
         }
     }

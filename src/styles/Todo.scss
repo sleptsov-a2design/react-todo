@@ -23,6 +23,9 @@
             &:hover {
                 background: rgb(243, 243, 243);
             }
+            s {
+                text-decoration: line-through;
+            }
         }
         label {
             flex-grow: 1;

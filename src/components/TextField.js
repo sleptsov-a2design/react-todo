@@ -15,6 +15,7 @@ export default class TextField extends React.Component {
                     type="button"
                     value="Добавить"
                     onClick={this.props.click}
+                    disabled={this.props.btnActive}
                 />
             </div>
         )

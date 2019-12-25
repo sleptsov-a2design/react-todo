@@ -5,9 +5,9 @@ export default class StatusBar extends React.Component {
     render() {
         return (
             <div className="todo__status">
-                <p className="todo__status-stat">Завершено: 0/2</p>
+            <p className="todo__status-stat">Завершено: {this.props.progress}</p>
                 <div className="todo__status-progress">
-                    <div className="todo__status-progress-line"></div>
+                    <div className="todo__status-progress-line" style={this.props.width}></div>
                 </div>
             </div>
         )
