@@ -7,6 +7,16 @@
         margin: 0;
         font-size: 25px;
     }
+    &__link {
+        position: fixed;
+        left: 15%;
+        top: 5%;
+        color: #4072ce;
+        text-decoration: none;
+        padding: 10px 0;
+        display: block;
+        text-align: center;
+    }
     &__list {
         margin: 0;
         padding: 0;

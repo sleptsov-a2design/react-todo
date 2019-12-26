@@ -1,0 +1,19 @@
+.home-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.home__link {
+    font-size: 25px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 30px;
+    text-decoration: none;
+    border-radius: 20px;
+    color: white;
+    font-family: monospace;
+    transition: all 0.25s ease-out;
+    &:hover {
+        background: rgba(0, 0, 0, 1);
+    }
+}

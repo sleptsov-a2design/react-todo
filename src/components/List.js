@@ -2,6 +2,7 @@ import React from 'react'
 import StatusBar from './StatusBar'
 import TextField from './TextField'
 import ListItem from './ListItem'
+import { Link } from 'react-router-dom'
 import '../styles/Todo.scss'
 
 
@@ -62,6 +63,7 @@ export default class List extends React.Component {
         let widthStatus = (this.state.item.filter(el => el.change).length)/this.state.item.length * 100
         return (
             <div className="todo">
+                <Link className="todo__link" to="/">Go to Home Page</Link>
                 <h1>Список дел</h1>
                 {this.state.item.length ?
                     <StatusBar
