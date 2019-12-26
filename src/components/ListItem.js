@@ -9,6 +9,7 @@ export default class ListItem extends React.Component {
         this.props.remove(this.props.context.id);
     }
     render() {
+        const {context} = this.props;
         return (
             <li>
                 <label>
@@ -18,9 +19,9 @@ export default class ListItem extends React.Component {
                         onChange={this.handleToggleActive}
                     />
                 <span>
-                    {!this.props.context.change ?
-                    (this.props.context.title) : 
-                    (<s>{this.props.context.title}</s>)}
+                    {!context.change ?
+                    (context.title) : 
+                    (<s>{context.title}</s>)}
                 </span>
                 </label>
                 <input
